@@ -1,6 +1,9 @@
 import styles from './CityItem.module.css';
 import { polyfillCountryFlagEmojis } from 'country-flag-emoji-polyfill';
 
+// To support flag emojis
+polyfillCountryFlagEmojis();
+
 const formatDate = (date) =>
   new Intl.DateTimeFormat('en', {
     day: 'numeric',
@@ -9,10 +12,6 @@ const formatDate = (date) =>
   }).format(new Date(date));
 
 function CityItem({ city }) {
-  // To support flag emojis
-  polyfillCountryFlagEmojis();
-
-  console.log(city);
   const { cityName, emoji, date } = city;
 
   return (

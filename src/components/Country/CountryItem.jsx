@@ -1,4 +1,9 @@
-import styles from "./CountryItem.module.css";
+import styles from './CountryItem.module.css';
+
+import { polyfillCountryFlagEmojis } from 'country-flag-emoji-polyfill';
+
+// To support flag emojis
+polyfillCountryFlagEmojis();
 
 function CountryItem({ country }) {
   return (
